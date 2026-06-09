@@ -104,7 +104,7 @@ const About = () => {
                 <div className="fact-item">
                   <span className="fact-label">Languages:</span>
                   <span className="fact-value">
-                    JavaScript, Python, HTML/CSS
+                    JavaScript, Python, HTML/CSS, C, C++, JAVA etc.
                   </span>
                 </div>
                 <div className="fact-item">
