@@ -1,0 +1,267 @@
+/* Navbar Glassmorphism Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styling */
+.navbar-logo a {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-logo a:hover {
+  transform: scale(1.05);
+  color: #64ffda;
+  text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+}
+
+.logo-icon {
+  color: #64ffda;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #64ffda 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #64ffda, #00d4ff);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #64ffda;
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Admin Link Styling */
+.nav-link.admin-link {
+  background: linear-gradient(135deg, #64ffda 0%, #00d4ff 100%);
+  color: #0a0e27;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-link.admin-link::after {
+  display: none;
+}
+
+.nav-link.admin-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(100, 255, 218, 0.3);
+  text-shadow: none;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.bar.active:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.bar.active:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.active:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+
+  .navbar-container {
+    padding: 0 1.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+  }
+
+  .nav-menu.active {
+    max-height: 300px;
+    padding: 1rem 0;
+  }
+
+  .nav-item {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .nav-link:hover {
+    color: #64ffda;
+    padding-left: 1rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0.6rem 0;
+  }
+
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1.2rem;
+    gap: 0.3rem;
+  }
+
+  .logo-icon {
+    font-size: 1.1rem;
+  }
+
+  .nav-menu {
+    top: 60px;
+  }
+
+  .nav-item {
+    padding: 0.8rem 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background: rgba(15, 15, 35, 0.1);
+  }
+
+  .nav-menu {
+    background: rgba(10, 10, 25, 0.98);
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}

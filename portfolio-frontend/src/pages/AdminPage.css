@@ -1,0 +1,368 @@
+/* Admin Page Styling */
+
+.admin-section {
+  background: linear-gradient(
+    135deg,
+    rgba(100, 255, 218, 0.05) 0%,
+    rgba(0, 212, 255, 0.05) 100%
+  );
+  min-height: calc(100vh - 140px);
+  padding: 80px 20px;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.admin-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #64ffda 0%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.admin-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Stats Grid */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Stats Card */
+.stats-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: statsSlideIn 0.6s ease-out backwards;
+  cursor: pointer;
+}
+
+.stats-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stats-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stats-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stats-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes statsSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(100, 255, 218, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(100, 255, 218, 0.15);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.stats-card h3 {
+  font-size: 1.1rem;
+  color: #64ffda;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0.5rem 0;
+}
+
+.stat-trend {
+  display: block;
+  color: rgba(100, 255, 218, 0.7);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Admin Sections Grid */
+.admin-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Admin Card Base */
+.admin-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: cardFadeIn 0.6s ease-out backwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Admin Section Card */
+.admin-section-card {
+  animation-delay: 0.5s;
+}
+
+.admin-card:nth-child(1).admin-section-card {
+  animation-delay: 0.5s;
+}
+
+.admin-card:nth-child(2).admin-section-card {
+  animation-delay: 0.6s;
+}
+
+.admin-card:nth-child(3).admin-section-card {
+  animation-delay: 0.7s;
+}
+
+.admin-card:nth-child(4).admin-section-card {
+  animation-delay: 0.8s;
+}
+
+.admin-section-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(100, 255, 218, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 15px 40px rgba(100, 255, 218, 0.15);
+}
+
+.admin-section-card h2 {
+  font-size: 1.3rem;
+  color: #64ffda;
+  margin-bottom: 0.8rem;
+}
+
+.admin-section-card p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Admin Button */
+.admin-btn {
+  background: linear-gradient(135deg, #64ffda 0%, #00d4ff 100%);
+  color: #0a0e27;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s,
+    height 0.6s;
+}
+
+.admin-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.admin-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(100, 255, 218, 0.3);
+}
+
+/* Recent Activities */
+.recent-activities {
+  grid-column: 1 / -1;
+  animation-delay: 0.9s;
+}
+
+.recent-activities h2 {
+  font-size: 1.5rem;
+  color: #64ffda;
+  margin-bottom: 1.5rem;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem;
+  background: rgba(100, 255, 218, 0.08);
+  border-radius: 8px;
+  border-left: 3px solid rgba(100, 255, 218, 0.5);
+  transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+  background: rgba(100, 255, 218, 0.15);
+  border-left-color: #64ffda;
+  transform: translateX(5px);
+}
+
+.activity-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.activity-info {
+  flex: 1;
+}
+
+.activity-title {
+  color: #ffffff;
+  font-size: 0.95rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.activity-time {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  margin: 0.3rem 0 0;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .admin-section {
+    padding: 60px 15px;
+  }
+
+  .admin-header h1 {
+    font-size: 2rem;
+  }
+
+  .admin-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .admin-sections {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-section {
+    padding: 50px 10px;
+  }
+
+  .admin-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .admin-header {
+    margin-bottom: 2rem;
+  }
+
+  .admin-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stats-card {
+    padding: 1.5rem;
+  }
+
+  .stat-icon {
+    font-size: 2rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .admin-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-card {
+    padding: 1.5rem;
+  }
+
+  .activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .activity-icon {
+    font-size: 1.5rem;
+  }
+}
